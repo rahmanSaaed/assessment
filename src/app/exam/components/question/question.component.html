@@ -1,0 +1,55 @@
+
+
+ <div class="question-container">
+    <h3>{{ question.question }}</h3>
+    
+    <div class="options-container" *ngIf="question.type === 'multiple'">
+      <label>Select an option:</label>
+      <div *ngFor="let option of shuffledOptions">
+        <input
+          type="radio"
+          id="option-{{ option }}-{{ questionIndex }}"
+          name="question-{{ questionIndex }}"
+          [value]="option"
+          [(ngModel)]="selectedAnswer"
+          (change)="emitAnswer()"
+        />
+        <label for="option-{{ option }}-{{ questionIndex }}">{{ option }}</label>
+      </div>
+    </div>
+  
+    <div class="options-container" *ngIf="question.type === 'boolean'">
+      <label for="true-false-{{ questionIndex }}">Choose:</label>
+      <div>
+        <input
+          type="radio"
+          id="true-{{ questionIndex }}"
+          name="true-false-{{ questionIndex }}"
+          [value]="true"
+          [(ngModel)]="selectedAnswer"
+          (change)="emitAnswer()"
+        />
+        <label for="true-{{ questionIndex }}">True</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="false-{{ questionIndex }}"
+          name="true-false-{{ questionIndex }}"
+          [value]="false"
+          [(ngModel)]="selectedAnswer"
+          (change)="emitAnswer()"
+        />
+        <label for="false-{{ questionIndex }}">False</label>
+      </div>
+    </div>
+    
+    <div class="options-container" *ngIf="question.type === 'freetext'">
+      <label>Your answer:</label>
+      <textarea
+        [(ngModel)]="selectedAnswer"
+        (input)="emitAnswer()"
+        placeholder="Write your answer here..."
+      ></textarea>
+    </div>
+  </div>

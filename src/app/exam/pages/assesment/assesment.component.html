@@ -1,0 +1,27 @@
+<div class="container">
+
+    <div class="row nav-bar" *ngIf="assessmentData?.category">
+            <app-exam-header [name]="assessmentData?.category" [progress]="progress"></app-exam-header>
+    </div>
+
+
+    <div class="assessment-container">
+        <app-question
+          *ngIf="assessmentData?.questions.length"
+          [question]="assessmentData?.questions[currentQuestionIndex]"
+          [questionIndex]="currentQuestionIndex"
+          (answerSelected)="handleAnswerSelection($event)"
+        ></app-question>
+      
+        <div class="button-container">
+          <button (click)="goToNextQuestion()" [disabled]="!selectedAnswers[currentQuestionIndex] || (currentQuestionIndex === assessmentData?.questions.length - 1)">Next</button>
+        </div>
+      
+        <div class="score-container" *ngIf="(currentQuestionIndex === assessmentData?.questions.length - 1)">
+          <button (click)="finishExam()" [disabled]="!selectedAnswers[currentQuestionIndex]" >Finish</button>
+
+        </div>
+      </div>
+
+
+</div>

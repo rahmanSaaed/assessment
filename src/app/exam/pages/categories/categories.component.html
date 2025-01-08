@@ -1,0 +1,17 @@
+<div class="container">
+
+    <!-- // nav bar-->
+    <div class="row nav-bar">
+        <app-nav-bar>
+            <app-categories-header></app-categories-header>
+        </app-nav-bar>
+    </div>
+
+
+    <div class="card-container">
+        <app-card *ngFor="let category of groupedExams" [data]="category"></app-card>
+      </div>
+
+
+
+</div>

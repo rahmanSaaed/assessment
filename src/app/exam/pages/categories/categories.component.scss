@@ -1,0 +1,12 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap to a new row */
+    gap: 16px; /* Adds consistent spacing between cards */
+    justify-content: flex-start; /* Aligns cards to the left */
+  }
+  
+  app-card {
+    flex: 1 1 calc(33.33% - 16px); /* 3 cards per row, including spacing */
+    max-width: calc(33.33% - 16px); /* Ensures each card doesn't stretch too wide */
+    box-sizing: border-box; /* Ensures padding and border don't affect size */
+  }
