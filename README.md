@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
+## Environment Setup
+
+### Node.js and npm
+- **Node.js version**: v14.21.3 (replace with your version)
+- **npm version**: 6.14.18 (replace with your version)
+
+### Angular CLI
+- **Angular CLI version**:  16.2.16 (replace with your version)
+- **Angular Framework version**: 16.2.12
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
